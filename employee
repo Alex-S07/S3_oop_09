@@ -1,0 +1,27 @@
+package module1;
+class employe{
+	String empName;
+	int empId;
+	double salary;
+	
+	employe(int empId, String empName,double salary){
+		this.empId =empId;
+		this.empName =empName;
+		this.salary =salary;
+		
+	}
+	void displayEmployee(){
+		System.out.println("Employee Name :"+empName);
+		System.out.println("Employee ID :"+empId);
+		System.out.println("Employee Salary :"+salary);
+	}
+}
+public class EmployeDemo {
+	public static void main (String[] args) {
+		employe e1 = new employe(12345,"Hans",1.00);
+		e1.displayEmployee();
+		employe e2 = new employe(12346,"Stivance",2.00);
+		e2.displayEmployee();
+	}
+
+}
