@@ -1,4 +1,5 @@
 package module1;
+import java.util.*;
 class employe{
 	String empName;
 	int empId;
@@ -11,17 +12,37 @@ class employe{
 		
 	}
 	void displayEmployee(){
-		System.out.println("Employee Name :"+empName);
-		System.out.println("Employee ID :"+empId);
-		System.out.println("Employee Salary :"+salary);
+		System.out.println(empId+"\t\t"+empName+"\t\t"+salary); 
+				
 	}
 }
 public class EmployeDemo {
 	public static void main (String[] args) {
-		employe e1 = new employe(12345,"Hans",1.00);
-		e1.displayEmployee();
-		employe e2 = new employe(12346,"Stivance",2.00);
-		e2.displayEmployee();
+		Scanner in =new Scanner(System.in);
+		System.out.print("Enter number of employees: ");
+        int n = in.nextInt();
+        employe[] emp=new employe[n];
+      
+
+        for (int i = 0; i < n; i++) {
+            System.out.println("Enter details for employee " + (i + 1) + ":");
+            System.out.print("Enter Employee ID: ");
+            int empId = in.nextInt();
+            in.nextLine(); 
+            System.out.print("Enter Employee Name: ");
+            String empName = in.nextLine();
+            System.out.print("Enter Employee Salary: ");
+            double salary = in.nextDouble();
+            emp[i] = new employe(empId,empName,salary);
+          
+        }
+        System.out.println("Employee ID\tEmployee Name\t3Salary");
+        System.out.println();
+        for (int i = 0; i < n; i++) {
+             emp[i].displayEmployee();
+        }
+        in.close();
+
 	}
 
 }
