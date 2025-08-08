@@ -1,11 +1,12 @@
-Class A {
+package module2;
+class A {
     int i, j;
     void showij() {
         System.out.println("i & j = " + i + " " + j);
     }
 }
 
-Class B extends A {
+class B extends A {
     int k;
     void showk() {
         System.out.println("i & j in B, K = " + i + " " + j + " " + k);
@@ -22,3 +23,4 @@ public class inher {
         ob.showk();
     }
 }
+
